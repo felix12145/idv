@@ -1,7 +1,6 @@
 package idv.teamtime.airportmanagement.domain;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -15,17 +14,19 @@ public class FlightInformation {
   private String id;
   @Field("departure")
   @Indexed
-  private String departureCity;
+  private Airport departureAirport;
   @Field("destination")
   @Indexed
-  private String destinationCity;
+  private Airport destinationAirport;
   private FlightType type;
   private boolean isDelayed;
   private int durationMin;
-  private LocalTime departureDate;
+  private LocalDate departureDate;
   private Aircraft aircraft;
   @Transient
   private LocalDate createdAt;
+
+  private String description;
 
 
   public FlightInformation() {
@@ -40,20 +41,20 @@ public class FlightInformation {
     this.id = id;
   }
 
-  public String getDepartureCity() {
-    return departureCity;
+  public Airport getDepartureAirport() {
+    return departureAirport;
   }
 
-  public void setDepartureCity(String departureCity) {
-    this.departureCity = departureCity;
+  public void setDepartureAirport(Airport departureAirport) {
+    this.departureAirport = departureAirport;
   }
 
-  public String getDestinationCity() {
-    return destinationCity;
+  public Airport getDestinationAirport() {
+    return destinationAirport;
   }
 
-  public void setDestinationCity(String destinationCity) {
-    this.destinationCity = destinationCity;
+  public void setDestinationAirport(Airport destinationAirport) {
+    this.destinationAirport = destinationAirport;
   }
 
   public FlightType getType() {
@@ -80,11 +81,11 @@ public class FlightInformation {
     this.durationMin = durationMin;
   }
 
-  public LocalTime getDepartureDate() {
+  public LocalDate getDepartureDate() {
     return departureDate;
   }
 
-  public void setDepartureDate(LocalTime departureDate) {
+  public void setDepartureDate(LocalDate departureDate) {
     this.departureDate = departureDate;
   }
 
@@ -103,4 +104,13 @@ public class FlightInformation {
   public void setCreatedAt(LocalDate createdAt) {
     this.createdAt = createdAt;
   }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
 }
