@@ -1,4 +1,4 @@
-package idv.teamtime.airportmanagemet;
+package idv.teamtime.airportmanagement;
 
 import com.github.mongobee.Mongobee;
 import org.springframework.boot.SpringApplication;
