@@ -1,7 +1,7 @@
 # Setup
 
 ## Tools you need:
-- Postman: https://www.postman.com/downloads/ or any other tool you can execute http-Requests
+- Postman: https://www.postman.com/downloads/ or any other tool that can execute http-Requests
 
 # Overview
 ## Here we are going to implement crud-opterations for mongoDB using MongoTemplate
