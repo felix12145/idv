@@ -1,0 +1,9 @@
+{
+  "flightsPerDay": 355,
+  "name": "MUC",
+  "closed": false,
+  "location": {
+    "city": "Munich",
+    "country": "Germany"
+  }
+}

@@ -17,6 +17,8 @@ public class Location {
     this.country = country;
   }
 
+  public Location() {}
+
   public String getId() {
     return id;
   }
