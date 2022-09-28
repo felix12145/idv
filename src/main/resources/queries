@@ -1,0 +1,23 @@
+1. Which aircrafts can be used for 180 passangers and more?
+  Query: db.aircraft.find({nbSeats : {$gte: 180 }});
+  Answer: Three - A734, A737, A321 Neo
+
+2. Which aircrafts starts with 'A7' and can be used for less then 190 passengers?
+  Query: db.aircraft.find({$and :[{model : {$regex : /^A7/}}, {nbSeats: {$lt : 190}}]} )
+  Answer: A737
+
+3. How many airports are in Paris and whats their name?
+  Query: db.airport.find({"location.city": "Paris"});
+  Answer: Two - Charles de Gaulle, Paris Airport
+
+4. Which airport in Germany is closed?
+  Query: db.airport.find({$and : [{closed : true}, {"location.county": "Germany" }]});
+  Answer: Berlin Tegel
+
+5. Find all Airports that are either in 'Germany', 'United States' or 'Spain' and are not closed.
+   The airports of interest have more then 155 or 50 or less flights per day.
+   The result has to be sorted by county in ascending order and by flights per day in descending order.
+   We are only interested to see the fields name, county and flightsPerDay. For how many airports are we looking and whats their names?
+
+   Query: db.airport.find({$and : [{"location.country": {$in : ["Germany", "United States", "Spain"]}},{closed: false},  {$or : [{flightsPerDay : {$gt : 155}},{flightsPerDay : {$lte : 50}}]}]},{_id : 0, name : true, "location.country": true, flightsPerDay: true}).sort({"location.country" : 1, flightsPerDay: -1});
+   Answer: Madrid Airport, New York Airport, Las Vegas Airport
