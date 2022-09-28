@@ -33,7 +33,7 @@ public class DbChangeLog001 {
     Location locationMadrid = new Location(UUID.randomUUID().toString(), "Madrid", "Spain");
     Location locationBarcelona = new Location(UUID.randomUUID().toString(), "Barcelona",
         "Spain");
-    Location locationLasVegas = new Location(UUID.randomUUID().toString(), "Las Vegas", "Germany");
+    Location locationLasVegas = new Location(UUID.randomUUID().toString(), "Las Vegas", "United States");
     Location locationWashington = new Location(UUID.randomUUID().toString(), "Washington",
         "United States");
 
@@ -43,22 +43,25 @@ public class DbChangeLog001 {
     Airport copenhagen = new Airport(UUID.randomUUID().toString(), 40, "Copenhagen Airport", false,
         locationCopenhagen);
     Airport berlin = new Airport(UUID.randomUUID().toString(), 40, "BER", false, locationBerlin);
-    Airport newYork = new Airport(UUID.randomUUID().toString(), 160, "New York Airport", false,
+    Airport berlinTegel = new Airport(UUID.randomUUID().toString(), 40, "Berlin Tegel", true,
+        locationBerlin);
+    Airport newYork = new Airport(UUID.randomUUID().toString(), 180, "New York Airport", false,
         locationNewYork);
     Airport france = new Airport(UUID.randomUUID().toString(), 160, "Paris Airport", false,
         locationFrance);
 
     Airport bucharest = new Airport(UUID.randomUUID().toString(), 160, "Bucharest Airport", false,
         locationBucharest);
-    Airport madrid = new Airport(UUID.randomUUID().toString(), 160, "Madrid Airport", false,
+    Airport madrid = new Airport(UUID.randomUUID().toString(), 10, "Madrid Airport", false,
         locationMadrid);
-    Airport barcelona = new Airport(UUID.randomUUID().toString(), 160, "Barcelona Airport", false,
+    Airport barcelona = new Airport(UUID.randomUUID().toString(), 100, "Barcelona Airport", false,
         locationBarcelona);
     Airport lasVegas = new Airport(UUID.randomUUID().toString(), 160, "Las Vegas Airport", false,
         locationLasVegas);
-    Airport washington = new Airport(UUID.randomUUID().toString(), 160, "Washington Airport", false,
+    Airport washington = new Airport(UUID.randomUUID().toString(), 155, "Washington Airport", false,
         locationWashington);
-    List<Airport> airports = Arrays.asList(rome, paris, copenhagen, berlin, newYork, france,
+    List<Airport> airports = Arrays.asList(rome, paris, copenhagen, berlin, berlinTegel, newYork,
+        france,
         bucharest, madrid, barcelona, lasVegas, washington);
     mongoTemplate.insertAll(airports);
 
