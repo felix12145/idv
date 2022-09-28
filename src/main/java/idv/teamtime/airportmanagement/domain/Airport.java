@@ -20,6 +20,8 @@ public class Airport {
     this.location = location;
   }
 
+  public Airport() {}
+
   public Boolean getClosed() {
     return closed;
   }
