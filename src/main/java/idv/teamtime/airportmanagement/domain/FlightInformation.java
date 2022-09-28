@@ -2,7 +2,6 @@ package idv.teamtime.airportmanagement.domain;
 
 import java.time.LocalDate;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -19,18 +18,28 @@ public class FlightInformation {
   @Indexed
   private Airport destinationAirport;
   private FlightType type;
-  private boolean isDelayed;
-  private int durationMin;
+  private Boolean isDelayed;
+  private Integer durationMin;
   private LocalDate departureDate;
   private Aircraft aircraft;
-  @Transient
-  private LocalDate createdAt;
-
   private String description;
 
+  public FlightInformation(String id, Airport departureAirport, Airport destinationAirport,
+      FlightType type, Boolean isDelayed, Integer durationMin, LocalDate departureDate,
+      Aircraft aircraft,
+      String description) {
+    this.id = id;
+    this.departureAirport = departureAirport;
+    this.destinationAirport = destinationAirport;
+    this.type = type;
+    this.isDelayed = isDelayed;
+    this.durationMin = durationMin;
+    this.departureDate = departureDate;
+    this.aircraft = aircraft;
+    this.description = description;
+  }
 
   public FlightInformation() {
-    this.createdAt = LocalDate.now();
   }
 
   public String getId() {
@@ -65,19 +74,19 @@ public class FlightInformation {
     this.type = type;
   }
 
-  public boolean isDelayed() {
+  public Boolean isDelayed() {
     return isDelayed;
   }
 
-  public void setDelayed(boolean delayed) {
+  public void setDelayed(Boolean delayed) {
     isDelayed = delayed;
   }
 
-  public int getDurationMin() {
+  public Integer getDurationMin() {
     return durationMin;
   }
 
-  public void setDurationMin(int durationMin) {
+  public void setDurationMin(Integer durationMin) {
     this.durationMin = durationMin;
   }
 
@@ -95,14 +104,6 @@ public class FlightInformation {
 
   public void setAircraft(Aircraft aircraft) {
     this.aircraft = aircraft;
-  }
-
-  public LocalDate getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(LocalDate createdAt) {
-    this.createdAt = createdAt;
   }
 
   public String getDescription() {

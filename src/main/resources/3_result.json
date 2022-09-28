@@ -1,0 +1,191 @@
+[
+  {
+    "id": "633432c933b7d72c7e953140",
+    "departureAirport": {
+      "id": "825da7ae-843a-4a03-9974-ee4e2cffd9c2",
+      "flightsPerDay": 40,
+      "name": "BER",
+      "closed": false,
+      "location": {
+        "id": "488ff012-78ef-4764-9293-5d04a2dc2304",
+        "city": "Berlin",
+        "country": "Germany"
+      }
+    },
+    "destinationAirport": {
+      "id": "c0079474-2e55-4cd4-98e1-28dbf1f5fed4",
+      "flightsPerDay": 160,
+      "name": "Bucharest Airport",
+      "closed": false,
+      "location": {
+        "id": "ad0b2dd9-3b2b-497f-8269-79ec989fe2e4",
+        "city": "Bucharest",
+        "country": "Romania"
+      }
+    },
+    "type": "International",
+    "durationMin": 150,
+    "departureDate": {
+      "year": 2022,
+      "month": "SEPTEMBER",
+      "monthValue": 9,
+      "dayOfMonth": 27,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      },
+      "dayOfWeek": "TUESDAY",
+      "leapYear": false,
+      "dayOfYear": 270,
+      "era": "CE"
+    },
+    "aircraft": {
+      "id": "681d1ea3-83b3-44c2-8269-69be6b3fd8e1",
+      "model": "A320",
+      "nbSeats": 170
+    },
+    "delayed": true
+  },
+  {
+    "id": "633432c933b7d72c7e953141",
+    "departureAirport": {
+      "id": "7c39eb1d-d6b8-4cb0-8520-7bc054869773",
+      "flightsPerDay": 10,
+      "name": "Madrid Airport",
+      "closed": false,
+      "location": {
+        "id": "bb1436de-a821-4d68-830f-22541226d1b4",
+        "city": "Madrid",
+        "country": "Spain"
+      }
+    },
+    "destinationAirport": {
+      "id": "862ef5e5-6c03-4ad7-85fa-4796e1d77305",
+      "flightsPerDay": 100,
+      "name": "Barcelona Airport",
+      "closed": false,
+      "location": {
+        "id": "80e1e1b5-553c-402c-9aeb-9b662df65b86",
+        "city": "Barcelona",
+        "country": "Spain"
+      }
+    },
+    "type": "Internal",
+    "durationMin": 120,
+    "departureDate": {
+      "year": 2022,
+      "month": "SEPTEMBER",
+      "monthValue": 9,
+      "dayOfMonth": 27,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      },
+      "dayOfWeek": "TUESDAY",
+      "leapYear": false,
+      "dayOfYear": 270,
+      "era": "CE"
+    },
+    "aircraft": {
+      "id": "732e04a6-98ff-4785-8a83-4d172c630e1d",
+      "model": "A321 Neo",
+      "nbSeats": 200
+    },
+    "delayed": true
+  },
+  {
+    "id": "633432c933b7d72c7e953143",
+    "departureAirport": {
+      "id": "c0079474-2e55-4cd4-98e1-28dbf1f5fed4",
+      "flightsPerDay": 160,
+      "name": "Bucharest Airport",
+      "closed": false,
+      "location": {
+        "id": "ad0b2dd9-3b2b-497f-8269-79ec989fe2e4",
+        "city": "Bucharest",
+        "country": "Romania"
+      }
+    },
+    "destinationAirport": {
+      "id": "a1e22859-d9e8-42c3-84d1-8c35ebe883bc",
+      "flightsPerDay": 50,
+      "name": "Rome",
+      "closed": false,
+      "location": {
+        "id": "d9277503-cab5-41ec-9a16-63d31fb13419",
+        "city": "Rome",
+        "country": "Italy"
+      }
+    },
+    "type": "International",
+    "durationMin": 110,
+    "departureDate": {
+      "year": 2022,
+      "month": "SEPTEMBER",
+      "monthValue": 9,
+      "dayOfMonth": 28,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      },
+      "dayOfWeek": "WEDNESDAY",
+      "leapYear": false,
+      "dayOfYear": 271,
+      "era": "CE"
+    },
+    "aircraft": {
+      "id": "732e04a6-98ff-4785-8a83-4d172c630e1d",
+      "model": "A321 Neo",
+      "nbSeats": 200
+    },
+    "delayed": false
+  },
+  {
+    "id": "633432c933b7d72c7e95313e",
+    "departureAirport": {
+      "id": "a1e22859-d9e8-42c3-84d1-8c35ebe883bc",
+      "flightsPerDay": 50,
+      "name": "Rome",
+      "closed": false,
+      "location": {
+        "id": "d9277503-cab5-41ec-9a16-63d31fb13419",
+        "city": "Rome",
+        "country": "Italy"
+      }
+    },
+    "destinationAirport": {
+      "id": "a856711d-6f60-43aa-8fed-914623c66811",
+      "flightsPerDay": 160,
+      "name": "Paris Airport",
+      "closed": false,
+      "location": {
+        "id": "8b8896d5-f8bc-4e03-96fb-a4270d082d21",
+        "city": "Paris",
+        "country": "France"
+      }
+    },
+    "type": "International",
+    "durationMin": 80,
+    "departureDate": {
+      "year": 2022,
+      "month": "SEPTEMBER",
+      "monthValue": 9,
+      "dayOfMonth": 23,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      },
+      "dayOfWeek": "FRIDAY",
+      "leapYear": false,
+      "dayOfYear": 266,
+      "era": "CE"
+    },
+    "aircraft": {
+      "id": "3cf23955-1c3d-4ea1-8caf-550cd8507fc6",
+      "model": "A737",
+      "nbSeats": 180
+    },
+    "description": "Flight from Rome to Paris",
+    "delayed": false
+  }
+]

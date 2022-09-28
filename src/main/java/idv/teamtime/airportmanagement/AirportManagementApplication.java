@@ -1,5 +1,7 @@
 package idv.teamtime.airportmanagement;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.mongobee.Mongobee;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,5 +38,12 @@ public class AirportManagementApplication {
     runner.setLockCollectionName("migrations_lock");
     runner.setMongoTemplate(this.mongoTemplate);
     return runner;
+  }
+
+  @Bean
+  ObjectMapper objectMapper() {
+    ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.setSerializationInclusion(Include.NON_NULL);
+    return objectMapper;
   }
 }

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "633432c933b7d72c7e95313e",
+    "departureAirport": {
+      "name": "Rome"
+    },
+    "destinationAirport": {
+      "name": "Paris Airport"
+    },
+    "type": "International",
+    "delayed": false
+  }
+]

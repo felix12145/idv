@@ -7,17 +7,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Airport {
   @Id
   String id;
-  int flightsPerDay;
+  Integer flightsPerDay;
   String name;
-  boolean closed;
+  Boolean closed;
   Location location;
 
-  public Airport(String id, int flightsPerDay, String name, boolean closed, Location location) {
+  public Airport(String id, Integer flightsPerDay, String name, Boolean closed, Location location) {
     this.id=id;
     this.flightsPerDay = flightsPerDay;
     this.name = name;
     this.closed = closed;
     this.location = location;
+  }
+
+  public Boolean getClosed() {
+    return closed;
+  }
+
+  public void setClosed(Boolean closed) {
+    this.closed = closed;
   }
 
   public String getId() {
@@ -28,11 +36,11 @@ public class Airport {
     this.id = id;
   }
 
-  public int getFlightsPerDay() {
+  public Integer getFlightsPerDay() {
     return flightsPerDay;
   }
 
-  public void setFlightsPerDay(int flightsPerDay) {
+  public void setFlightsPerDay(Integer flightsPerDay) {
     this.flightsPerDay = flightsPerDay;
   }
 
