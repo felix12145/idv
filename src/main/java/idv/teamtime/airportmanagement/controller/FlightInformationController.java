@@ -12,13 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/flights")
 public class FlightInformationController {
-
-  private final FlightInformationService flightInformationService;
   private final FlightInformationRepository flightInformationRepository;
 
-  public FlightInformationController(FlightInformationService flightInformationService,
-      FlightInformationRepository flightInformationRepository) {
-    this.flightInformationService = flightInformationService;
+  public FlightInformationController(FlightInformationRepository flightInformationRepository) {
     this.flightInformationRepository = flightInformationRepository;
   }
 
@@ -30,6 +26,7 @@ public class FlightInformationController {
   @GetMapping("international/{departureCity}")
   public List<FlightInformation> findInternationalFlightsByDeparture(
       @PathVariable("departureCity") String departure) {
+
     return  flightInformationRepository.findInternationalFlightsByDeparture(departure);
   }
 
@@ -45,6 +42,6 @@ public class FlightInformationController {
   public List<FlightInformation> findFlightsByDuration(
       @PathVariable("city") String city) {
 
-    return flightInformationService.findRelatedToCityAndNotDelayed(city);
+    return flightInformationRepository.findRelatedToCityAndNotDelayed(city);
   }
 }
