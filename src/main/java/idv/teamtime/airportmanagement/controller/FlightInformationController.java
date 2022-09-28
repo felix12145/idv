@@ -1,6 +1,7 @@
 package idv.teamtime.airportmanagement.controller;
 
 import idv.teamtime.airportmanagement.domain.FlightInformation;
+import idv.teamtime.airportmanagement.repositories.FlightInformationRepository;
 import idv.teamtime.airportmanagement.service.FlightInformationService;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,20 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class FlightInformationController {
 
   private final FlightInformationService flightInformationService;
+  private final FlightInformationRepository flightInformationRepository;
 
-  public FlightInformationController(FlightInformationService flightInformationService) {
+  public FlightInformationController(FlightInformationService flightInformationService,
+      FlightInformationRepository flightInformationRepository) {
     this.flightInformationService = flightInformationService;
+    this.flightInformationRepository = flightInformationRepository;
   }
 
   @GetMapping("/all")
   public List<FlightInformation> findAll() {
-    return flightInformationService.findAll();
+    return flightInformationRepository.findAll();
   }
 
   @GetMapping("international/{departureCity}")
-  public List<FlightInformation> findInternationFlightsByDeparture(
+  public List<FlightInformation> findInternationalFlightsByDeparture(
       @PathVariable("departureCity") String departure) {
-    return flightInformationService.findInternationFlightsByDeparture(departure);
+    return  flightInformationRepository.findInternationalFlightsByDeparture(departure);
   }
 
   @GetMapping("duration/{durationMin}/{durationMax}")
@@ -34,7 +38,7 @@ public class FlightInformationController {
       @PathVariable("durationMin") int durationMin,
       @PathVariable("durationMax") int durationMax) {
 
-    return flightInformationService.findByDuration(durationMin, durationMax);
+    return flightInformationRepository.findByDuration(durationMin, durationMax);
   }
 
   @GetMapping("relatedNotDelayed/{city}")

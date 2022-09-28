@@ -29,10 +29,9 @@ public class FlightInformationService {
     return this.mongoTemplate.find(query, FlightInformation.class);
   }
 
-
   //  2) Implement: Find all international flights by departure city
   //  Question: How many international flights start from Rome? Whats the dastination airport?
-  public List<FlightInformation> findInternationFlightsByDeparture(String departure) {
+  public List<FlightInformation> findInternationalFlightsByDeparture(String departure) {
     Query departureQuery = Query.query(new Criteria().andOperator(
         Criteria.where("departure.location.city").is(departure),
         Criteria.where("type").is(FlightType.International))
