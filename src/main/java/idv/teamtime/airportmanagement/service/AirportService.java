@@ -1,10 +1,7 @@
 package idv.teamtime.airportmanagement.service;
 
-import com.mongodb.client.result.DeleteResult;
 import idv.teamtime.airportmanagement.domain.Airport;
-import java.util.List;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,38 +13,37 @@ public class AirportService {
     this.mongoTemplate = mongoTemplate;
   }
 
+  // 1)
   public Airport findById(String id) {
-    return mongoTemplate.findById(id, Airport.class);
+    // Implementation here
+    return new Airport();
   }
 
+  // 2)
+  // U can use src/main/resources/create_airport.json to insert the airport via Postman
   public Airport createAirport(Airport airport) {
-    return mongoTemplate.insert(airport);
+    // Implementation here
+    return new Airport();
   }
 
+  // 3)
+  // U can modify and use src/main/resources/create_airport.json to update the created Airport via Postman
   public Airport updateAirport(String id, Airport airport) {
-    Airport original = findById(id);
-    if (null == original) {
-      return mongoTemplate.insert(airport);
-    }
-    original.setName(airport.getName());
-    original.setFlightsPerDay(airport.getFlightsPerDay());
-    original.setClosed(airport.getClosed());
-    original.setLocation(airport.getLocation());
-    return mongoTemplate.save(original);
+    // Implementation here
+    return new Airport();
   }
 
+  // 4)
+  // returns the amount of deleted Airports
   public Long deleteAirport(String id) {
-    Airport original = findById(id);
-    if ((null == original)) {
-      return -1L;
-    }
-    DeleteResult result = mongoTemplate.remove(original);
-    return result.getDeletedCount();
+    // Implementation here
+    return -1L;
   }
 
+  // 5)
+  // returns the amount of deleted Airports
   public Integer deleteAll() {
-    List<Airport> result = mongoTemplate.findAllAndRemove(new Query(), Airport.class);
-    return result.size();
+    // Implementation here
+    return -1;
   }
-
 }
