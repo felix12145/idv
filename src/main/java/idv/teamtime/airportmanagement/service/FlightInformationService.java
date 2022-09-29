@@ -33,7 +33,7 @@ public class FlightInformationService {
     return this.mongoTemplate.find(departureQuery, FlightInformation.class);
   }
 
-  //  3) Implement: Find all flights by duration between min and max sort by duration-min desc
+  //  3) Implement: Find all flights by duration between min and max (inclusive min and max) sort by duration-min desc
   //  Question: Fetch the endpoint with minDuration = 50 and maxDuration = 150. How many flights do you count?
   public List<FlightInformation> findByDuration(int minDuration, int maxDuration) {
     Query byDurationBetween = new Query();
