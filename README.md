@@ -32,7 +32,7 @@
 - https://www.mongodb.com/docs/manual/reference/operator/query/#std-label-query-selectors
 
 ## Take a look at the given collections using the above command 
-## 1. Which aircraft can be used for 180 passengers and more?
+## 1. Which aircraft can be used for 190 passengers and more?
 ## 2. Which aircraft starts with 'A7' and can be used for less than 190 passengers?
 ## 3. How many airports are in Paris and what's their name?
 ## 4. Which airport in Germany is closed?
